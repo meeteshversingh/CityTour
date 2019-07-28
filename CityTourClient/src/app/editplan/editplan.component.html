@@ -1,0 +1,73 @@
+<div class="container">
+  <h4>Select package Days</h4>
+  <mat-form-field>
+    <mat-label>Package Duration</mat-label>
+    <mat-select [(ngModel)]="selected1" (ngModelChange)=" onSelectedDuration($event)" placeholder="Duration"
+      [(value)]="selected1">
+      <mat-option>None</mat-option>
+      <mat-option *ngFor="let duration of duration" [value]="duration.value">
+        {{duration.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <!--{{selected1}}-->
+
+</div>
+
+<br>
+<br>
+<br>
+
+<div class="viewplaces">
+  <h1>Edit Plan</h1>
+</div>
+<style>
+  table,
+  td,
+  th {
+    border: 1px solid black;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 90%;
+  }
+
+  th {
+    height: 50 px;
+  }
+</style>
+<table id="places">
+<tr>
+  <th>CITY ID</th>
+  <th>CITY</th>
+  <th>CATEGORY</th>
+  <th>PLACE</th>
+  <th>DURATION</th>
+</tr>
+
+<tr *ngFor="let lst of list ">
+    <td>{{lst.city_Id}}</td>
+    <td>
+        <input type="text" [(ngModel)] = "lst.city">
+    </td>
+    <td>
+        <input type="text" [(ngModel)] = "lst.category">
+    </td>
+    <td>
+        <input type="text" [(ngModel)] = "lst.places">
+    </td>
+    <td>
+        <input type="text" [(ngModel)] = "lst.duration">
+    </td>
+   <!-- <td>{{lst.city_Id}}</td>
+    <td>{{lst.city}}</td>
+    <td>{{lst.category}}</td>
+    <td>{{lst.places}}</td>
+    <td>{{lst.duration}}</td>-->
+    <td><button (click)=' updateList(lst)'>UPDATE</button></td>
+    <td><button><mat-icon (click)='delete(lst.city_Id)'>delete</mat-icon></button></td>
+  </tr>
+  </table>
+
+  {{msg}}

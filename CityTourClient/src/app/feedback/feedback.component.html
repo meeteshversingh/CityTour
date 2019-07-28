@@ -1,0 +1,79 @@
+
+<div class = "container border m-5">
+  <form>
+    <mat-form-field >
+      <mat-label>Enter your EmailId</mat-label>
+      <input class="w-100" matInput placeholder="EmailId" [formControl] = "EmailId">
+    </mat-form-field>
+    
+    <mat-form-field>
+      <mat-label>Enter your Contact Details</mat-label>
+      <input matInput placeholder="Contact" [formControl] = "Contact">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Enter Date</mat-label>
+      <input matInput placeholder="Name"[formControl] = "Date">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Comments</mat-label>
+      <input matInput placeholder="Comments" [formControl] = "Comments">
+    </mat-form-field>
+    <input type = "button" mat-button (click)="submit()" value="Submit" />
+  </form>
+</div>
+{{msg}}
+<!-- 
+<div class="addplaces"> 
+    <h1>
+        Add Places
+    </h1>
+    
+</div>
+  <table>
+  <tr>
+    <td>
+      <label> City </label>
+    </td>
+    <td>
+      <input type="string" [(ngModel)]='city'/>
+    </td>
+    </tr>
+    &nbsp;
+    <tr>
+      <td>
+        <label> Location </label>
+      </td>
+      <td>
+        <input type="String" [(ngModel)]='location'/>
+      </td>
+      </tr>
+      &nbsp;
+    <tr>
+        <td>
+          <label> Duration
+          </label>
+        </td>
+        <td>
+          <input type="String" [(ngModel)]='duration'/>
+        </td>
+        </tr>
+        &nbsp;
+        
+    <tr>
+        <td>
+          <label> Places
+          </label>
+        </td>
+        <td>
+          <input type="String" [(ngModel)]='places'/>
+        </td>
+        </tr>
+        &nbsp;
+    <tr>
+      <td>
+        <button (click)='submit()'>SUBMIT</button>
+      </td>
+    </tr>
+
+    {{msg}} -->

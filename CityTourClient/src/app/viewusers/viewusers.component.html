@@ -1,0 +1,26 @@
+
+<div class="users">
+    <h1>Registered Users</h1>
+    </div>
+    
+    <table id="viewusers">
+      <tr>
+        <th>First_Name</th>
+        <th>Last_Name</th> 
+        <th>Email_id</th>
+        <th>Gender</th>
+        <th>Phone_No</th>
+        <th>City</th>
+        <th>Age</th>
+      </tr>
+    
+      <tr *ngFor ="let list of userlist">
+        <td>{{list.first_Name}}</td>
+        <td>{{list.last_Name}}</td>
+        <td>{{list.email_Id}}</td> 
+        <td>{{list.gender}}</td>
+        <td>{{list.phone_No}}</td>
+        <td>{{list.city}}</td>
+        <td>{{list.age}}</td>
+      </tr>
+    </table>

@@ -1,0 +1,28 @@
+<div class = "container border m-5">
+  <form (ngSumbit) = "Submit()" class="p-3">
+      <mat-form-field >
+          <mat-label>S.No</mat-label>
+          <input class="w-100" matInput placeholder="No." [formControl] = "sno">
+        </mat-form-field>
+    <mat-form-field >
+      <mat-label>Enter your City</mat-label>
+      <input class="w-100" matInput placeholder="City" [formControl] = "city">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Enter your Category</mat-label>
+      <input matInput placeholder="Category"[formControl] = "category">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Enter your Places</mat-label>
+        <input matInput placeholder="Places" [formControl] = "places">
+    </mat-form-field>
+    <mat-form-field> 
+      <mat-label>Enter your Duration</mat-label>
+      <input matInput placeholder="Duration" [formControl] = "duration">
+    </mat-form-field>
+      <button class= "btn btn-primary center-block"  (click)="addPlace()">Add Place</button>
+    
+  </form>
+</div>
+
+{{msg}}

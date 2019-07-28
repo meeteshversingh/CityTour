@@ -1,0 +1,90 @@
+<!--<angular-image-slider class="m-5" [images]="imagesUrl"></angular-image-slider>-->
+<div class="mt-4 container">
+    <div class="row">
+      <div class="col-md-12">
+        <ngb-carousel *ngIf="images">
+          <ng-template ngbSlide>
+            <img [src]="images[0]" alt="Random first slide">
+            <div class="carousel-caption">
+              <h3>Silicon Valley of India</h3>
+              
+            </div>
+          </ng-template>
+          <ng-template ngbSlide>
+            <img [src]="images[1]" alt="Random second slide">
+            <div class="carousel-caption">
+              <h3>Welcome to Namma Metro</h3>
+              
+            </div>
+          </ng-template>
+          <ng-template ngbSlide>
+            <img [src]="images[2]" alt="Random third slide">
+            <div class="carousel-caption">
+              <h3>Garden City</h3>
+              
+            </div>
+          </ng-template>
+        </ngb-carousel>
+      </div>
+    </div>
+  </div>
+  
+  <div class="border border-3 mt-4 container">
+    <div>
+      <form class="m-3" [formGroup]="Details" (ngSubmit)="Submit()">
+          
+        <mat-form-field>
+          <mat-label>Category</mat-label>
+          <mat-select matNativeControl formControlName="selectedValue" name="location">
+            <option value="" selected></option>
+            <mat-option *ngFor="let location of locations" [value]="location.value">
+              {{location.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field *ngIf="Details.get('selectedValue').value == 'Temples'">
+          <mat-label>Temple</mat-label>
+          <mat-select formControlName="data" multiple>
+            <mat-option *ngFor="let temple of temples" [value]="temple">{{temple}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field *ngIf="Details.get('selectedValue').value == 'Monuments'">
+          <mat-label>Monuments</mat-label>
+          <mat-select formControlName="data" multiple>
+            <mat-option *ngFor="let monument of monuments" [value]="monument">{{monument}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field *ngIf="Details.get('selectedValue').value == 'Shopping'">
+          <mat-label>Shopping</mat-label>
+          <mat-select formControlName="data" multiple>
+            <mat-option *ngFor="let element of shopping" [value]="element">{{element}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Number of Days</mat-label>
+          <mat-select matNativeControl formControlName="selectedValue1" name="day">
+            <option value="" selected></option>
+            <mat-option *ngFor="let day of days" [value]="day.value">
+              {{day.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Hotels</mat-label>
+          <mat-select matNativeControl formControlName="selectedValue2" name="hotel">
+            <option value="" selected></option>
+            <mat-option *ngFor="let hotel of hotels" [value]="hotel.value">
+              {{hotel.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput [matDatepicker]="picker1" placeholder="Choose a Date" formControlName="date">
+          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+        <button  mat-button [disabled]='!Details.valid'> Final Plan </button>
+        
+      </form>
+    </div>
+  </div>

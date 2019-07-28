@@ -1,0 +1,45 @@
+<div>
+<h4>Show Places</h4>
+<mat-form-field>
+  <mat-label>Favouirte Places</mat-label>
+  <mat-select  [(ngModel)]="selected" (ngModelChange)="onSelectedCity($event)" placeholder="City" [(value)]="selected">
+    <mat-option>None</mat-option>
+    <mat-option *ngFor="let place of location" [value]="place.value">
+      {{place.viewValue}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+</div>
+<br>
+<br>
+<br>
+<div class="viewplaces">
+    <h1>View Plan</h1>
+</div>
+
+<table id="places">
+  <tr>
+  <th>SNO</th> 
+    
+  <th>City</th>
+ 
+  <th>Location</th>
+   
+  <th>Places</th> 
+ 
+    <th>Duration</th>
+   
+ </tr>
+ 
+ <tr *ngFor="let lst of list">
+  <td>{{lst.city_Id}}</td>
+  <td>{{lst.city}}</td>
+  <td>{{lst.category}}</td>
+  <td>{{lst.places}}</td>
+  <td>{{lst.duration}}</td>
+</tr>      
+</table> 
+      
+      <br>
+     

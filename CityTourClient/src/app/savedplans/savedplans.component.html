@@ -1,0 +1,30 @@
+
+<div class="viewplaces">
+    <h1>Saved Plan</h1>
+</div>
+
+<table id="places">
+  <tr>
+  <th>Category</th> 
+    
+  <th>Places</th>
+ 
+  <th>No.of Days</th>
+   
+  <th>Hotels</th> 
+ 
+    <th>Date</th>
+   
+ </tr>
+ 
+ <tr *ngFor="let lst of list">
+  <td>{{lst.category}}</td>
+  <td>{{lst.places}}</td>
+  <td>{{lst.days}}</td>
+  <td>{{lst.hotel}}</td>
+  <td>{{lst.date}}</td>
+</tr>      
+</table> 
+      
+      <br>
+     

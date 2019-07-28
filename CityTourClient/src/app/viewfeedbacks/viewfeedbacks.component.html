@@ -1,0 +1,21 @@
+<div class="viewfeed">
+    <h1 >Feedbacks</h1>
+    </div>
+    
+    <table id="viewfeedbacks"  >
+      <tr>
+        <th>EmailId</th>
+        <th>ContactNo</th> 
+        <th>Date</th>
+        <th>Comments</th>
+      </tr>
+    
+      <tr *ngFor ="let list of feedbacklist">
+        <td>{{list.email_Id}}</td>
+        <td>{{list.contact_No}}</td>
+        <td>{{list.date}}</td> 
+        <td>{{list.comments}}</td>
+      </tr>
+      </table>
+      {{msg}}
+    

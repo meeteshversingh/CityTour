@@ -1,0 +1,27 @@
+.viewfeed {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5em;
+}
+#viewfeedbacks {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  #viewfeedbacks td, #viewusers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+   
+  }
+
+  #viewfeedbacks tr:nth-child(even){background-color: #f2f2f2;}
+
+  #viewfeedbacks tr:hover {background-color: #ddd;}
+
+  #viewfeedbacks th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: rgb(133, 192, 187);
+    color: white;
+  }

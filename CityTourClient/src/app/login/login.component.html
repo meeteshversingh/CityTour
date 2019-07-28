@@ -1,0 +1,23 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <form [formGroup]="loginForm" (ngSubmit)="loginToAdmin('')">
+      <br>
+      <br>
+      <input type="text" formControlName="email_Id" class="fadeIn second" name="emailId" placeholder="Enter Your Email"
+        pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$">
+      <div *ngIf="submitted && loginForm.controls.email_Id.errors">
+        <span class="error">Email is required</span>
+      </div>
+      <input type="password" formControlName="password" class="fadeIn third" name="password" placeholder="Enter your Password">
+      <br>
+      <br>
+      <input mat-button type="submit" value="Login" />
+      <input mat-button type="button" (click)="userdetails()" value="Sign Up" />
+    </form>
+    <div id="formFooter">
+       
+      <a class="pointer" (click)="forget()">Forgot Password?</a>
+
+    </div>
+  </div>
+</div>

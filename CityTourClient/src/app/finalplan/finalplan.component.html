@@ -1,0 +1,33 @@
+.<div style="margin : auto" class="p-5">
+  <div class="viewplaces text-center">
+    <h1>Final Plan</h1>
+  </div>
+  <div class="border border-primary p-5 m-5">
+      <table class="table-responsive"  id="places">
+          <tr>
+            <th>Category</th>
+            <td>{{list.selectedValue}}</td>
+          </tr>
+          <tr>
+            <th>Places</th>
+            <td>{{list.data}}</td>
+          </tr>
+          <tr>
+            <th>Days</th>
+            <td>{{list.selectedValue1}}</td>
+          </tr>
+          <tr>
+            <th>Hotel</th>
+            <td>{{list.selectedValue2}}</td>
+          </tr>
+          <tr>
+            <th>Date</th>
+            <td>{{list.date}}</td>
+          </tr>
+        </table>
+        <div class="mt-3">
+            <button mat-raised-button color="primary" (click)="Submit()">Saved Plan</button>
+        </div>
+        
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<mat-toolbar color="primary" *ngIf="user == 'none'">
+  <mat-toolbar-row>
+    <span class="abc"><a routerLink="/Home">Home</a></span>
+    <span class="abc"><a routerLink="/about">About Us</a></span>
+    <span class="abc"><a routerLink="/contact">Contact us</a></span>
+    <span class="fill"></span>
+    <span class="pointer" [matMenuTriggerFor]="menu">My Account</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-toolbar color="primary" *ngIf="user == 'user'">
+  <mat-toolbar-row>
+    <span class="abc"><a routerLink="/Savedplans">SavedPlans</a></span>
+    <span class="abc"><a routerLink="/Editdetails">Edit Details</a></span>
+    <span class="abc"><a routerLink="/Createplan">Create Plan</a></span>
+    <span class="abc"><a routerLink="/Feedback">Feedback</a></span>
+    <span class="abc"><button mat-raised-button color='accent' (click)="logout()">Logout</button></span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-toolbar color="primary" *ngIf="user == 'admin'">
+  <mat-toolbar-row>
+    <span class="abc"><a routerLink="/Addplaces">Add Places</a></span>
+    <span class="abc"><a routerLink="/Editplan">Edit Plan</a></span>
+    <span class="abc"><a routerLink="/Viewplaces">View Places</a></span>
+    <span class="abc"><a routerLink="/Viewusers" (click)="onSelectingUser()">View Users</a></span>
+    <span class="abc"><a routerLink="/Viewfeedbacks" (click)="onselectingFeedback()">View Feedbacks</a></span>
+    <span class="abc"><button mat-raised-button color='accent' (click)="logout()">Logout</button></span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-menu #menu="matMenu">
+  <button mat-menu-item routerLink="/login"> User</button>
+  <button mat-menu-item routerLink="/login"> Admin</button>
+</mat-menu>

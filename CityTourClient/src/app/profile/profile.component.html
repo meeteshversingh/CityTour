@@ -1,0 +1,60 @@
+<div class="container register border">
+    <h3>Registration Details</h3>
+    <span style="border-bottom: 2"></span>
+    <form [formGroup]="registration" (ngSubmit)="Register()">
+        
+        <div class="form-group">
+            <input type="text" formControlName="fname" class="form-control" placeholder="First Name *">
+            <span class="text-danger" *ngIf="registration.controls.fname.errors">First name is
+                Required</span>
+        </div>
+        <div class="form-group">
+            <input type="text" formControlName="lname" class="form-control" placeholder="Last Name *">
+            <span class="text-danger" *ngIf="registration.controls.fname.errors">Last name is
+                    Required</span>
+        </div>
+        <div class="form-group">
+            <input type="password" formControlName="password" class="form-control" placeholder="Password *">
+            <span class="text-danger" *ngIf="registration.controls.fname.errors">Password is
+                    Required</span>
+        </div>
+        <div class="form-group">
+            <input type="password" formControlName="cpassword" class="form-control" placeholder="Confirm Password *">
+            <span class="text-danger" *ngIf="registration.controls.fname.errors">Confirm Password</span>
+        </div>
+        <div class="form-group">
+            <label>Gender</label>
+            <div class="form-check">
+                <label class="radio inline mr-3">
+                    <input type="radio" formControlName="gender" value="male" checked>
+                    <span> Male </span>
+                </label>
+                <label class="radio inline">
+                    <input type="radio" formControlName="gender" value="female">
+                    <span>Female </span>
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="Usename" formControlName="username" class="form-control" placeholder="Enter your EmailId*">
+            <span class="text-danger" *ngIf="registration.controls.username.errors">Email is Required</span>
+        </div>
+        <div class="form-group">
+            <input type="text" minlength="10" maxlength="10" formControlName="phone" class="form-control"
+                placeholder="Your Phone *" value="" />
+                <span class="text-danger" *ngIf="registration.controls.fname.errors">Contact Number is
+                        Required</span>
+        </div>
+        <div class="form-group">
+            <input type="city" formControlName="city" class="form-control" placeholder="Your City *">
+            <span class="text-danger" *ngIf="registration.controls.fname.errors">City is Required</span>
+        </div>
+        <div class="form-group">
+            <input type="age" formControlName="age" class="form-control" placeholder="Your Age *">
+            <span class="text-danger" *ngIf="registration.controls.fname.errors">Age is
+                    Required</span>
+
+        </div>
+        <button class="btn btn-primary" mat-button>Register</button>
+    </form>
+</div>
